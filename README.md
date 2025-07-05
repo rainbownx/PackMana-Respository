@@ -1,19 +1,47 @@
-# Packmana Package Repository
+# PackMana Repository
 
-Welcome to the **official package repository** for [Packmana](https://github.com/yourusername/packmana) — a simple Bash-based package manager for Linux systems.
+This repository hosts packages for the **Packmana** package manager.
 
-This repository hosts prebuilt `.tar.gz` packages that can be installed using Packmana.
+## Overview
+
+PackMana-Repository contains pre-packaged `.tar.gz` files and version metadata that Packmana users can install, update, and remove using the Packmana CLI tool.
+
+Packages here are simple archives containing executable bash scripts (`.sh` files) ready for installation.
 
 ---
 
-## 🌐 How It Works
+## How to add your own package
 
-Each package is a compressed `.tar.gz` archive containing:
-- A `manifest.txt` file with metadata
-- A standard Unix-style file tree (e.g., `usr/bin/app`)
+If you want to contribute your own package to Packmana’s repository:
 
-Packmana can fetch and install these packages using `curl` or `wget` when you add this repo URL with:
+1. Fork this repository.
 
-```bash
-packmana add-repo https://yourusername.github.io/packmana-repo
+2. Prepare your package:
+   - Create a bash script file (`your-script.sh`).
+   - Package it into a `.tar.gz` archive:
+     ```bash
+     tar czf your-script.tar.gz your-script.sh
+     ```
+   - Create a version file named `your-script.version` with the version string, e.g.:
+     ```
+     1.0
+     ```
+
+3. Add your package files (`your-script.tar.gz` and `your-script.version`) to the root of your forked repo.
+
+4. Commit and push your changes.
+
+5. Open a Pull Request to this repository.
+
+---
+
+## How Packmana uses this repo
+
+- Packmana downloads packages and their version files from this repository via GitHub Pages.
+- When users run `packmana install <package>`, it looks for the corresponding `.tar.gz` archive here.
+- The version files (`.version`) allow Packmana to check for updates.
+
+---
+
+## Repository structure
 
