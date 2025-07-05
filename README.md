@@ -45,3 +45,9 @@ If you want to contribute your own package to Packmana’s repository:
 
 ## Repository structure
 
+/ (root)
+|- helloworld.tar.gz
+|- helloworld.version
+|- anotherpkg.tar.gz
+|- anotherpkg.version
+|- ...
