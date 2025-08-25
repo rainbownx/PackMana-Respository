@@ -1,0 +1,5 @@
+[Packmana app config]
+APP_NAME=simplefile
+APP_VERSION=v1.0.0
+APP_TYPE=command_line
+APP_CREATOR=rainbownx
